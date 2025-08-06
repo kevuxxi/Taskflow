@@ -1,0 +1,38 @@
+.container {
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 500px;
+    margin: 3rem auto;
+    text-align: center;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.title {
+    color: #212121;
+}
+
+.form-container button {
+    background-color: #2962FF;
+    color: #64B5F6;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #FFFFFF;
+}
+
+.form-container a {
+    color: #64B5F6;
+    text-decoration: none;
+}

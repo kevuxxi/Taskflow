@@ -1,0 +1,42 @@
+.landing-container {
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 500px;
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.landing-title {
+    color: #212121;
+
+}
+
+.landing-container p {
+    color: #757575;
+}
+
+
+.landing-container img {
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.landing-container button {
+    background-color: #2962FF;
+    color: #64B5F6;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.landing-container button:hover {
+    background-color: #FFFFFF;
+}

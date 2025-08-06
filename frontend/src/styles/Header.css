@@ -1,0 +1,31 @@
+.header {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    position: relative;
+    max-height: 200px;
+}
+
+
+.logo {
+    height: auto;
+    width: 150px;
+    object-fit: contain;
+}
+
+.header button {
+    background-color: #2962FF;
+    color: #64B5F6;
+    padding: 0.2rem 0.2rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.header button:hover {
+    background-color: #FFFFFF;
+
+}
