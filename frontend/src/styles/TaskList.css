@@ -38,7 +38,8 @@
 
 }
 
-.completed {
+.item.completed p {
     text-decoration: line-through;
     opacity: 0.6;
 }
+

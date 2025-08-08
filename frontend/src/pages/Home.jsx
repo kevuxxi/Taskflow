@@ -27,6 +27,16 @@ const Home = () => {
 
     }
 
+    const tareaCompletada = (id) => {
+        const tareaActualizada = tareas.map((tarea) => (tarea.id === id ? { ...tarea, isCompleted: !tarea.isCompleted } : tarea))
+        setTareas(tareaActualizada)
+    }
+
+
+    const eliminarTarea = (id) => {
+        const tareasRestantes = tareas.filter((tarea) => (tarea.id !== id))
+        setTareas(tareasRestantes)
+    }
 
     return (
         <div >
@@ -35,7 +45,7 @@ const Home = () => {
                 <input type="text" value={texto} onChange={(e) => setTexto(e.target.value)} placeholder="Escribe una nueva tarea..." />
                 <button onClick={() => (aggTarea(texto))}>Agregar Tarea</button>
             </div>
-            <TaskList tareas={tareas} />
+            <TaskList tareas={tareas} tareaCompletada={tareaCompletada} eliminarTarea={eliminarTarea} />
         </div >
     )
 }
