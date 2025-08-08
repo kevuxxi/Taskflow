@@ -1,12 +1,10 @@
 import '../styles/TaskList.css'
 import TaskItem from './TaskItem'
 
-const TaskList = () => {
+const TaskList = ({ tareas }) => {
     return (
         <ul className="task-list">
-            <TaskItem />
-            <TaskItem />
-            <TaskItem />
+            {tareas.map((tarea) => (<li key={tarea.id}><TaskItem tarea={tarea} /></li>))}
         </ul>
     )
 }

@@ -1,9 +1,9 @@
 import React from 'react'
 
-const TaskItem = () => {
+const TaskItem = ({ tarea }) => {
     return (
         <li className='item'>
-            <p>lavar la ropa</p>
+            <p>{tarea.text}</p>
             <input type="checkbox" name="" id="" />
             <button>Eliminar</button>
         </li>
