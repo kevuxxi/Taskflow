@@ -1,4 +1,5 @@
 import Header from "../components/Header"
+import TaskList from "../components/TaskList"
 import '../styles/Home.css'
 
 const Home = () => {
@@ -6,8 +7,10 @@ const Home = () => {
         <div >
             <Header />
             <div className="home-container">
-            No hay tareas asignadas
-        </div>
+                <input type="text" />
+                <button>Agregar Tarea</button>
+            </div>
+            <TaskList />
         </div >
     )
 }

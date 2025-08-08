@@ -1,4 +1,32 @@
 .home-container {
-    margin-top: 20px;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    max-width: 600px;
+    margin: 40px auto;
+    gap: 10px;
+}
+
+.home-container button {
+    background-color: #FFFFFF;
+    color: #64B5F6;
+    padding: 0.2rem 0.2rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.home-container button:hover {
+    background-color: #2962FF;
+    color: #FFFFFF;
+    ;
+
+}
+
+.home-container input {
+    border-radius: 0.5rem;
+
 }
