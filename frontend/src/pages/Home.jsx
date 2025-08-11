@@ -1,11 +1,14 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Header from "../components/Header"
 import TaskList from "../components/TaskList"
 import '../styles/Home.css'
+import { collection, getDocs } from "firebase/firestore"
+import { db } from "../db/firebase.js"
 
 
 const Home = () => {
-    
+
+
     const [tareas, setTareas] = useState([]);
     const [texto, setTexto] = useState('')
 
@@ -36,6 +39,20 @@ const Home = () => {
         const tareasRestantes = tareas.filter((tarea) => (tarea.id !== id))
         setTareas(tareasRestantes)
     }
+
+    useEffect(() => {
+        const fetchTasks = async () => {
+            try {
+                const snap = await getDocs(collection(db, "tasks"));
+                const data = snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                setTareas(data);
+            } catch (err) {
+                console.error("Error leyendo tasks:", err);
+            }
+        };
+        fetchTasks();
+    }, [])
+
 
 
     return (
