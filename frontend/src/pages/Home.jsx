@@ -3,12 +3,11 @@ import Header from "../components/Header"
 import TaskList from "../components/TaskList"
 import '../styles/Home.css'
 
-const Home = () => {
 
+const Home = () => {
+    
     const [tareas, setTareas] = useState([]);
     const [texto, setTexto] = useState('')
-
-
 
     const aggTarea = (texto) => {
 
@@ -38,6 +37,7 @@ const Home = () => {
         setTareas(tareasRestantes)
     }
 
+
     return (
         <div >
             <Header />
@@ -49,5 +49,6 @@ const Home = () => {
         </div >
     )
 }
+
 
 export default Home 

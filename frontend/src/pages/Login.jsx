@@ -1,24 +1,45 @@
+import { useState } from 'react'
 import '../styles/Login.css'
 import { Link } from 'react-router-dom'
+import Singup from '../components/Singup'
 
 const Login = () => {
+
+    const [singup, setSingup] = useState(false)
+
+    const singupform = (e) => {
+        e.preventDefault();
+        setSingup(!singup)
+        console.log('clickeado, singup:', !singup);
+    }
+   
+
     return (
-        <div className='container'>
-            <h1 className='title'>Login</h1>
+        <div>
+            {singup ? (<Singup/>) :
+                (<div className='container'>
 
-            <form className='form-container'>
+                    < h1 className='title' > Login</h1 >
 
-                <label htmlFor="">Email</label>
-                <input type="email" name="email" id="" />
+                    <form className='form-container'>
 
-                <label htmlFor="">Password</label>
-                <input type="password" name="password" id="" />
+                        <label htmlFor="">Email</label>
+                        <input type="email" name="email" id="" />
 
-                <Link to={'/login'} > <button>Iniciar sesión</button></Link>
-                <Link to={'/login'} className='form-container-singup'>Registrarse</Link>
-            </form>
+                        <label htmlFor="">Password</label>
+                        <input type="password" name="password" id="" />
+
+                        <Link to={'/login'} > <button>Iniciar sesión</button></Link>
+
+                        <a href="#" onClick={singupform}>Registrarse</a>
+                    </form>
+                </div >)}
         </div>
+
     )
 }
 
 export default Login
+
+
+
