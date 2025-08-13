@@ -1,32 +1,43 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import Header from "../components/Header"
 import TaskList from "../components/TaskList"
 import '../styles/Home.css'
-import { collection, getDocs } from "firebase/firestore"
+import { collection, addDoc, query, where, onSnapshot } from "firebase/firestore"
 import { db } from "../db/firebase.js"
-
+import { AuthContext } from "../Context/AuthContext.jsx"
+import Loading from "../components/Loading.jsx"
 
 const Home = () => {
 
+    const { currentUser } = useContext(AuthContext);
 
     const [tareas, setTareas] = useState([]);
     const [texto, setTexto] = useState('')
+    const [loading, setloading] = useState(true);
 
-    const aggTarea = (texto) => {
+    const aggTarea = async (texto) => {
 
         if (texto.trim() === '') return;
 
-
-        const nuevatarea = {
-            id: Date.now(),
-            text: texto,
-            isCompleted: false,
+        if (!currentUser) {
+            console.error("No hay un usuario autenticado.");
+            return;
         }
 
-        setTareas([...tareas, nuevatarea])
+        const nuevatarea = {
+            text: texto,
+            isCompleted: false,
+            userId: currentUser.uid,
+        }
 
-        setTexto('')
-
+        try {
+            await addDoc(collection(db, "tasks"), nuevatarea);
+            console.log("Tarea agregada con el ID del usuario.");
+        } catch (e) {
+            console.error("Error al agregar la tarea:", e);
+        }
+        setTareas([]);
+        setTexto('');
     }
 
     const tareaCompletada = (id) => {
@@ -41,19 +52,25 @@ const Home = () => {
     }
 
     useEffect(() => {
-        const fetchTasks = async () => {
-            try {
-                const snap = await getDocs(collection(db, "tasks"));
-                const data = snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-                setTareas(data);
-            } catch (err) {
-                console.error("Error leyendo tasks:", err);
-            }
-        };
-        fetchTasks();
-    }, [])
 
+        if (!currentUser) {
+            setTareas([]);
+            return;
+        }
 
+        const q = query(collection(db, "tasks"), where("userId", "==", currentUser.uid));
+
+        const unsubscribe = onSnapshot(q, (querySnapshot) => {
+            const data = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+            setTareas(data);
+        });
+        setloading(false)
+        return unsubscribe
+    }, [currentUser])
+
+    if (loading) {
+        return <Loading />;
+    }
 
     return (
         <div >
