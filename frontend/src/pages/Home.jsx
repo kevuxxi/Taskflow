@@ -36,7 +36,7 @@ const Home = () => {
         } catch (e) {
             console.error("Error al agregar la tarea:", e);
         }
-        setTareas([]);
+        setTareas([...tareas, nuevatarea])
         setTexto('');
     }
 
