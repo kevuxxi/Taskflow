@@ -56,7 +56,7 @@ const Home = () => {
 
     const eliminarTarea = async (id) => {
         const taskref = doc(db, 'tasks', id);
-        await deleteDoc(taskref);
+        await deleteDoc(taskref)
     }
 
     useEffect(() => {
