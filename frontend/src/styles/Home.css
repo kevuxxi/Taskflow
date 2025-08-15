@@ -3,10 +3,10 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    max-width: 600px;
-    margin: 40px auto;
-    gap: 10px;
+    padding: 2rem;
+    max-width: 60rem;
+    margin: 4rem auto;
+    gap: 1rem;
 }
 
 .home-container button {

@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from "react"
 import Header from "../components/Header"
 import TaskList from "../components/TaskList"
 import '../styles/Home.css'
-import { collection, addDoc, query, where, onSnapshot } from "firebase/firestore"
+import { collection, addDoc, query, where, onSnapshot, updateDoc, doc, deleteDoc } from "firebase/firestore"
 import { db } from "../db/firebase.js"
 import { AuthContext } from "../Context/AuthContext.jsx"
 import Loading from "../components/Loading.jsx"
@@ -36,19 +36,27 @@ const Home = () => {
         } catch (e) {
             console.error("Error al agregar la tarea:", e);
         }
-        setTareas([...tareas, nuevatarea])
         setTexto('');
     }
 
-    const tareaCompletada = (id) => {
-        const tareaActualizada = tareas.map((tarea) => (tarea.id === id ? { ...tarea, isCompleted: !tarea.isCompleted } : tarea))
-        setTareas(tareaActualizada)
+
+
+
+
+    const tareaCompletada = async (id) => {
+        const tareaActualizada = tareas.find((tarea) => (tarea.id === id));
+        if (tareaActualizada) {
+            const taskref = doc(db, 'tasks', id);
+            await updateDoc(taskref, {
+                isCompleted: !tareaActualizada.isCompleted
+            })
+        }
     }
 
 
-    const eliminarTarea = (id) => {
-        const tareasRestantes = tareas.filter((tarea) => (tarea.id !== id))
-        setTareas(tareasRestantes)
+    const eliminarTarea = async (id) => {
+        const taskref = doc(db, 'tasks', id);
+        await deleteDoc(taskref);
     }
 
     useEffect(() => {
