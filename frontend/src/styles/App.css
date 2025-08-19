@@ -17,6 +17,7 @@ html,
 body,
 #root {
     height: 100%;
+    background: linear-gradient(180deg, #1976D2, var(--color-bg));
 }
 
 html {
@@ -25,8 +26,8 @@ html {
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(180deg, #1976D2, var(--color-bg));
     color: var(--color-text);
+    font-size: 1.6rem;
 }
 
 button {
@@ -49,3 +50,4 @@ input {
     border: 1px solid #ccc;
     border-radius: 6px;
 }
+

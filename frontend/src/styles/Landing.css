@@ -1,6 +1,6 @@
 .landing-container {
-    background-color: #FFFFFF;
-    padding: 3.2rem;
+    background-color: var(--color-primary);
+    padding: 2rem;
     border-radius: 1.6rem;
     max-width: 500px;
     margin: 4.8rem auto;
@@ -12,17 +12,17 @@
 }
 
 .landing-title {
-    color: #212121;
+    color: var(--color-secondary);
     font-size: 3.2rem;
 }
 
 .landing-container p {
-    color: #757575;
-  
+    color: var(--color-text);
+
 }
 
-
 .landing-container img {
+    width: 100%;
     max-height: 300px;
     object-fit: cover;
     border-radius: 0.5rem;
@@ -30,14 +30,11 @@
 }
 
 .landing-container button {
-    background-color: #2962FF;
-    color: #64B5F6;
-    padding: 1rem 2.4rem;
-    border-radius: 8rem;
-    font-weight: bold;
-    cursor: pointer;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+
 }
 
 .landing-container button:hover {
-    background-color: #FFFFFF;
+    background-color: var(--color-bg);
 }

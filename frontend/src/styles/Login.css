@@ -1,10 +1,11 @@
 .container {
-    background-color: #FFFFFF;
+    background-color: var(--color-white);
     padding: 2rem;
-    border-radius: 1rem;
-    max-width: 500px;
+    border-radius: 1.2rem;
+    max-width: 400px;
     margin: 3rem auto;
     text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .form-container {
@@ -12,24 +13,23 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
-    gap: 15px;
+    gap: 1rem;
 }
 
 .title {
-    color: #212121;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--color-secondary);
 }
 
 .form-container button {
-    background-color: #2962FF;
-    color: #64B5F6;
-    padding: 0.8rem 1.5rem;
-    border-radius: 0.5rem;
-    font-weight: bold;
-    cursor: pointer;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+
 }
 
 .form-container button:hover {
-    background-color: #FFFFFF;
+    background-color: var(--color-bg);
 }
 
 .form-container a {
