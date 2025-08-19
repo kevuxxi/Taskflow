@@ -25,7 +25,7 @@ html {
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(180deg, #0a0c10, var(--color-bg));
+    background: linear-gradient(180deg, #1976D2, var(--color-bg));
     color: var(--color-text);
 }
 
