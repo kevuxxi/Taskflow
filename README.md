@@ -1,7 +1,9 @@
-Taskflow
+# Taskflow
+
 Una aplicación web completa para la gestión de tareas, construida con React, Firebase y Material UI. Esta app permite a los usuarios crear, leer, actualizar y eliminar tareas en tiempo real.
 
-Características Principales
+# Características Principales
+
 Autenticación de Usuario: Los usuarios pueden registrarse y acceder a su propio espacio de tareas, garantizando la privacidad de los datos.
 
 Sincronización en Tiempo Real: Las actualizaciones de las tareas (agregar, completar, eliminar) se reflejan instantáneamente en la interfaz de usuario gracias a la funcionalidad de onSnapshot de Firestore.
@@ -12,7 +14,8 @@ Experiencia de Usuario: Proporciona un feedback visual claro para cada acción d
 
 Operaciones CRUD: Implementación completa de las cuatro operaciones básicas de la base de datos (Crear, Leer, Actualizar y Eliminar).
 
-Tecnologías Utilizadas
+# Tecnologías Utilizadas
+
 Frontend: React
 
 Backend como Servicio (BaaS): Firebase
@@ -25,27 +28,35 @@ Componentes de UI: Material UI
 
 Manejo de Paquetes: npm
 
-Instalación y Uso Local
+# Instalación y Uso Local
+
 Sigue estos pasos para clonar el proyecto y ejecutarlo en tu máquina local.
 
-Clona el Repositorio
-git clone [https://github.com/kevuxxi/Taskflow] cd tu-proyecto-de-tareas
+1. Clona el Repositorio
 
-Instala las dependencias
+git clone [https://github.com/kevuxxi/Taskflow]
+cd tu-proyecto-de-tareas
+
+2. Instala las dependencias
+
 npm install
 
-Configura Firebase
+3. Configura Firebase
+
 Crea un nuevo proyecto en la consola de Firebase.
 
 Copia tus credenciales de configuración.
 
 Crea un archivo .env en la raíz del proyecto y añade tus credenciales.
 
-Inicia la aplicación
+4. Inicia la aplicación
+
 npm run dev
 
-La aplicación se abrirá en http://localhost:5173/ (o en el puerto que se te indique).
+La aplicación se abrirá en <http://localhost:5173/> (o en el puerto que se te indique).
 
-🌐 Demo y Código Fuente Ver en Vivo: [https://todo-app-auth-abku-git-main-kevins-projects-442df414.vercel.app/]
+🌐 Demo y Código Fuente
+Ver en Vivo: [https://todo-app-auth-abku-git-main-kevins-projects-442df414.vercel.app/]
 
 Código Fuente: [https://github.com/kevuxxi/Taskflow]
+
