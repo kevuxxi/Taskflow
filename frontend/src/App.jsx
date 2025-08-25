@@ -4,7 +4,8 @@ import Login from './pages/Login'
 import Home from './pages/Home'
 import { AuthProvider } from './Context/AuthContext'
 import './styles/App.css'
-import ProtectedRoutes from './components/ProtectedRoutes.JSX'
+import ProtectedRoutes from "./components/ProtectedRoutes.jsx";
+
 
 function App() {
 
